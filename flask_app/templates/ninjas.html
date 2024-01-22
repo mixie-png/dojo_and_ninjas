@@ -1,0 +1,24 @@
+<h1>New Ninja</h1>
+<form action="/ninjas/add" method="POST">
+    <label for="dojos">Dojo:</label>
+    <!-- loop to read/get all the dojos in the database -->
+    <select name="dojos" id="dojos">
+        {% for dojo in dojos %}
+            <option value="{{dojo.id}}">{{dojo.name}}</option>
+        {% endfor %}
+    </select>
+
+    <br>
+    <label>First Name:</label>
+    <input type="text" name="fname">
+    <br>
+    <label>Last Name:</label>
+    <input type="text" name="lname">
+    <br>
+    <label>Age:</label>
+    <input type="text" name="age">
+    <br>
+    <input type="submit" value="Create">
+</form>
+
+<a href="/dojos">Home</a>
